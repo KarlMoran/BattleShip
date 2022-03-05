@@ -23,4 +23,30 @@ _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
 \
 """)
 
+def print_map(map):
+    print( "  A B C D E F G H")
+    print( "  •-•-•-•-•-•-•-•")
+    row_number = 1
+    for row in map:
+        print("%d|%s|" % (row_number, "|".join(row)))
+        row_number += 1
 
+def place_ships(map):
+    pass
+
+def ship_size_check():
+    pass
+
+def ship_overlap():
+    pass
+
+def user_input():
+    pass
+
+def hit_count():
+    pass
+
+def turn(map):
+    pass
+
+#while True:
