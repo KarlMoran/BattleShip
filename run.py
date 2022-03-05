@@ -52,8 +52,25 @@ def place_ships(map):
                                 board[row][i] = "∆"
                         else:
                             for i in range(row, row + ship_size):
-                                board[row][i] = "∆"
+                                board[i]][column] = "∆"
                         break
+            else:
+                place_ship = True
+                print('Place the ship with a length of ' + str(ship_size))
+                row, column, orientation = user_input(place_ship)
+                if ship_size_check(SHIP_SIZE, row, column, orientation):
+                    #check for overlapping ships 
+                    if ship_overlap(map, row, column, orientation, ship_size) == False:
+                        #placing ships
+                        if orientation == "H":
+                            for i in range(column, column + ship_size):
+                                board[row][i] = "∆"
+                        else:
+                            for i in range(row, row + ship_size):
+                                board[i][column] = "∆"
+                        print_map(PLAYER_MAP)
+                        break
+
 
 
 def ship_size_check(SHIP_SIZE, row, column, orientation):
@@ -71,6 +88,7 @@ def ship_size_check(SHIP_SIZE, row, column, orientation):
 def ship_overlap(map, row, column, orientation, ship_size):
     if orientation == "H":
         for i in range(column, column + ship_size):
+            #check to see if ship is overlap
             if map [row][i] == "∆":
                 return True
     else:
