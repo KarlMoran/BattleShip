@@ -36,7 +36,7 @@ def print_map(map):
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
-def place_ships(map):
+def place_ship(map):
     #loop between length of ships
     for ship_size in SHIP_SIZE:
         #loop around until ship fit in map
@@ -98,8 +98,15 @@ def ship_overlap(map, row, column, orientation, ship_size):
     return False
 
 
-def user_input():
-    pass
+def user_input(place_ship):
+    if place_ship ==True:
+        while True:
+            try:
+                orientation = input("PLease enter orientation H or V :").upper()
+                if orientation == "H" or orientation == "V":
+                    break
+                
+    
 
 def hit_count():
     pass
