@@ -19,7 +19,9 @@ LETTERS_TO_NUMBERS = {
     'H': 7
     }
 
-# The SHIP_SIZE list contains the size of each ship on the board
+PHASE = "≠" * 50
+
+# The SHIP_SIZE list contains the size of each ship on the map
 SHIP_SIZE = [2, 3, 3, 4, 5]
 
 def welcome_message():
@@ -36,6 +38,39 @@ _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
 \
 """)
 
+    # Welcome Message
+    print("\nWelcome To Battleships!\n")
+    print("THE MAP IS A GRID OF 8x8 WITH FIVE SHIPS TO SINK")
+    print("CARRIER - GREYHOUND - CRUISER - SUBMARINE - DESTROYER")
+    print("EACH PLAYER HAS 17 LIVES, \
+THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
+    time.sleep(5)
+    print(PHASE) 
+
+    # Instructions
+    print("\u001b[31mINSTRUCTIONS:\u001b[0m \n")
+    print("THE FIRST PLAYER TO GET A HIT COUNT OF 17 HITS DESTROYING ALL ENEMY \
+SHIPS WINS")
+    print("THE AIM OF THE GAME IS TO DESTROY THE AI \
+ENEMY BY DESTROYING ALL THEIR SHIPS")
+    print("BEFORE THEY DESTROY YOURS. THE THING IS WELL \
+BOTH OF YOU CANT SEE WHERE TO")
+    print("SHOOT... BUT THAT SHOULDNT BE MUCH OF A PROBLEM.")
+    print("THE RULES ARE AS FOLLOWS: \n")
+    print("SHIPS: \n")
+    print("DESTROYER - SIZE OF 2 ON THE BOARD\n")
+    print("SUBMARINE - SIZE OF 3 ON THE BOARD\n")
+    print("CRUISER - SIZE OF 3 ON THE BOARD\n")
+    print("GREYHOUND - SIZE OF 4 ON THE BOARD\n")
+    print("CARRIER - SIZE OF 5 ON THE BOARD\n")
+    # Instructions - Markers
+    print("MARKERS: \n")
+    print("∆ IS A SHIP")
+    print("- IS A MISS")
+    print("X IS A HIT/SUNK SHIP")
+    time.sleep(5)
+    print(PHASE)
+
 def print_map(map):
     # Header for the game 
     print( "  A B C D E F G H")
@@ -49,7 +84,7 @@ def print_map(map):
 def place_ship(map):
     """
     The place ship function loops throught the lengths of the ships and then
-    loops until the ship fits and dosent overlap any other ships on the board
+    loops until the ship fits and dosent overlap any other ships on the map
     and then places the ship.
     """
     #loop between length of ships
@@ -105,7 +140,7 @@ def ship_size_check(SHIP_SIZE, row, column, orientation):
 def ship_overlap(map, row, column, orientation, ship_size):
     """
     The ship_overlap function checks if inputted ships overlap any existing
-    ships already on the board
+    ships already on the map
     """
     if orientation == "H":
         for i in range(column, column + ship_size):
@@ -179,7 +214,7 @@ def user_input(place_ship):
 
 def hit_count(map):
     """
-    The hit_count function counts the number of hits each board (Player,
+    The hit_count function counts the number of hits each map (Player,
     Computer) has taken
     """
     count = 0
