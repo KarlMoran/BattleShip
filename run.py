@@ -59,8 +59,10 @@ def place_ship(map):
                 print('Place the ship with a length of ' + str(ship_size))
                 row, column, orientation = user_input(place_ship)
                 if ship_size_check(SHIP_SIZE, row, column, orientation):
-                    if ship_overlap(map, row, column, orientation, ship_size) == False: #Check for overlapping ships
-                        if orientation == "H":  #Placing ships
+                    #Check for overlapping ships
+                    if ship_overlap(map, row, column, orientation, ship_size) == False:
+                          #Placing ships
+                        if orientation == "H":
                             for i in range(column, column + ship_size):
                                 map[row][i] = "∆"
                         else:
@@ -143,11 +145,35 @@ def hit_count(map):
     count = 0 
     for row in map:
         for column in row:
-            if column == "∆"
-            count += 1
+            if column == "∆":
+                count += 1
     return count
-
+# User/Computer turn on game (don't need orientation)
 def turn(map):
-    pass
+    if map == PLAYER_GUESS_MAP:
+        row, column = user_input(PLAYER_GUESS_MAP)
+        if map[row][column] == "-":
+            turn(map)
+        elif map[row][column] == "∆":
+            turn(map)
+        elif COMPUTER_GUESS_MAP[row][column] == "∆":
+            map[row][column] = "∆"
+        else:
+            map[row][column] = "-"
+    else:
+        row, column = random.randint(0, 7), random.randint(0, 7)
+        if map[row][column] == "-":
+            turn(map)
+        elif map[row][column] == "∆":
+            turn(map)
+        elif PLAYER_GUESS_MAP[row][column] == "∆":
+            map[row][column] = "∆"
+        else:
+            map[row][column] = "-"
+
+place_ship(COMPUTER_MAP)
+print_map(COMPUTERMAP)
+print_map(PLAYER_MAP)
+place_ship(PLAYER_MAP)
 
 #while True:
