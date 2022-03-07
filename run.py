@@ -7,7 +7,7 @@ PLAYER_GUESS_MAP = [[" "] * 8 for i in range(8)]
 COMPUTER_GUESS_MAP = [[" "] * 8 for i in range(8)]
 
 # Assigns letters to numbers that can be used for ship placements
-LETTERS_TO_NUMBERS = {'A':0, 'B':1, 'C':2, 'D':3, 'E':4, 'F':5, 'G':6, 'H':7}
+LETTERS_TO_NUMBERS = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
 
 # The SHIP_SIZE list contains the size of each ship on the board
 SHIP_SIZE = [2, 3, 3, 4, 5]
@@ -49,29 +49,25 @@ def place_ship(map):
                         #placing ships
                         if orientation == "H":
                             for i in range(column, column + ship_size):
-                                board[row][i] = "∆"
+                                map[row][i] = "∆"
                         else:
                             for i in range(row, row + ship_size):
-                                board[i][column] = "∆"
+                                map[i][column] = "∆"
                         break
             else:
                 place_ship = True
                 print('Place the ship with a length of ' + str(ship_size))
                 row, column, orientation = user_input(place_ship)
                 if ship_size_check(SHIP_SIZE, row, column, orientation):
-                    #check for overlapping ships 
-                    if ship_overlap(map, row, column, orientation, ship_size) == False:
-                        #placing ships
-                        if orientation == "H":
+                    if ship_overlap(map, row, column, orientation, ship_size) == False: #Check for overlapping ships
+                        if orientation == "H":  #Placing ships
                             for i in range(column, column + ship_size):
-                                board[row][i] = "∆"
+                                map[row][i] = "∆"
                         else:
                             for i in range(row, row + ship_size):
-                                board[i][column] = "∆"
+                                map[i][column] = "∆"
                         print_map(PLAYER_MAP)
                         break
-
-
 
 def ship_size_check(SHIP_SIZE, row, column, orientation):
     if orientation == "H":
@@ -99,7 +95,7 @@ def ship_overlap(map, row, column, orientation, ship_size):
 
 
 def user_input(place_ship):
-    if place_ship ==True:
+    if place_ship == True:
         while True:
             try: #Askes for an input H or V
                 orientation = input("PLease enter orientation H or V :").upper()
@@ -124,12 +120,32 @@ def user_input(place_ship):
             except KeyError:
                 print('Please enter a vaild letter A-H')
         return row, column, orientation
+    else: #If your making guesses
+        while True:
+            try: 
+                row = input("Enter the row from 1-8 of the ship: ")
+                if row in '12345678':
+                    row = int(row) -1
+                    break
+            except ValueError:
+                print('Please enter a vaild number from 1-8')
+        while True:
+            try: 
+                column = input("Please enter the column of ships :").upper()
+                if column in 'ABCDEFGH':
+                    column = LETTERS_TO_NUMBERS[column]
+                    break
+            except KeyError:
+                print('Please enter a vaild letter A-H')
+        return row, column
 
-        
-    
-
-def hit_count():
-    pass
+def hit_count(map):
+    count = 0 
+    for row in map:
+        for column in row:
+            if column == "∆"
+            count += 1
+    return count
 
 def turn(map):
     pass
