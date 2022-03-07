@@ -101,11 +101,31 @@ def ship_overlap(map, row, column, orientation, ship_size):
 def user_input(place_ship):
     if place_ship ==True:
         while True:
-            try:
+            try: #Askes for an input H or V
                 orientation = input("PLease enter orientation H or V :").upper()
                 if orientation == "H" or orientation == "V":
                     break
-                
+            except TypeError:
+                print('Please enter a vaild orientation H or V')
+        while True:
+            try: #Askes for user to selection a Row 
+                row = input("Enter the row from 1-8 of the ship: ")
+                if row in '12345678':
+                    row = int(row) -1
+                    break
+            except ValueError:
+                print('Please enter a vaild number from 1-8')
+        while True:
+            try: #Askes for user to selection a Column
+                column = input("Please enter the column of ships :").upper()
+                if column in 'ABCDEFGH':
+                    column = LETTERS_TO_NUMBERS[column]
+                    break
+            except KeyError:
+                print('Please enter a vaild letter A-H')
+        return row, column, orientation
+
+        
     
 
 def hit_count():
