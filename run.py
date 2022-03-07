@@ -52,7 +52,7 @@ def place_ships(map):
                                 board[row][i] = "∆"
                         else:
                             for i in range(row, row + ship_size):
-                                board[i]][column] = "∆"
+                                board[i][column] = "∆"
                         break
             else:
                 place_ship = True
@@ -107,4 +107,4 @@ def hit_count():
 def turn(map):
     pass
 
-while True:
+#while True:
