@@ -1,4 +1,5 @@
 import random
+import time
 
 # Player & Computer Map variables
 PLAYER_MAP = [[" "] * 8 for i in range(8)]
@@ -8,8 +9,8 @@ COMPUTER_GUESS_MAP = [[" "] * 8 for i in range(8)]
 
 # Assigns letters to numbers that can be used for ship placements
 LETTERS_TO_NUMBERS = {
-    'A': 0, 
-    'B': 1, 
+    'A': 0,
+    'B': 1,
     'C': 2, 
     'D': 3, 
     'E': 4, 
@@ -46,6 +47,11 @@ def print_map(map):
         row_number += 1
 
 def place_ship(map):
+    """
+    The place ship function loops throught the lengths of the ships and then
+    loops until the ship fits and dosent overlap any other ships on the board
+    and then places the ship.
+    """
     #loop between length of ships
     for ship_size in SHIP_SIZE:
         #loop around until ship fit in map
@@ -55,7 +61,7 @@ def place_ship(map):
                     random.randint(0, 7), random.randint(0, 7)
                 if ship_size_check(ship_size, row, column, orientation):
                     #check for overlapping ship
-                    if ship_overlap(map, row, column, orientation, ship_size) == False:
+                    if not ship_overlap(map, row, column, orientation, ship_size):
                         #placing ships
                         if orientation == "H":
                             for i in range(column, column + ship_size):
@@ -138,7 +144,7 @@ def user_input(place_ship):
             except ValueError:
                 print("Please enter a valid letter between 1-8")
         while True:
-            try: #Askes for user to selection a Column
+            try:
                 column = input("Enter the column of the ship A-H: \n").upper()
                 if column not in 'ABCDEFGH':
                     print("Please enter a valid letter between A-H")
@@ -211,7 +217,7 @@ def turn(map):
             print("WE ARE HIT, FIRE BACK!")
             print("COMPUTERS MAP \n")
         else:
-            board[row][column] = "-"
+            map[row][column] = "-"
             print("THE COMPUTER MISSED,\n")
             print("COMPUTERS MAP \n")
 
@@ -221,7 +227,6 @@ print_map(PLAYER_MAP)
 place_ship(PLAYER_MAP)
 
 while True:
-    #Players turn 
     while True:
         print('Guess a battleship location on the map')
         print_map(PLAYER_GUESS_MAP)
@@ -230,7 +235,6 @@ while True:
     if hit_count(PLAYER_GUESS_MAP) == 17:
         print("Congratulations You have sunk all the battleships, You win!!!")
         break
-    #Computers turn
     while True:
         turn(COMPUTER_GUESS_MAP)
         break
