@@ -7,7 +7,16 @@ PLAYER_GUESS_MAP = [[" "] * 8 for i in range(8)]
 COMPUTER_GUESS_MAP = [[" "] * 8 for i in range(8)]
 
 # Assigns letters to numbers that can be used for ship placements
-LETTERS_TO_NUMBERS = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4, 'F': 5, 'G': 6, 'H': 7}
+LETTERS_TO_NUMBERS = {
+    'A': 0, 
+    'B': 1, 
+    'C': 2, 
+    'D': 3, 
+    'E': 4, 
+    'F': 5, 
+    'G': 6, 
+    'H': 7
+    }
 
 # The SHIP_SIZE list contains the size of each ship on the board
 SHIP_SIZE = [2, 3, 3, 4, 5]
@@ -42,9 +51,10 @@ def place_ship(map):
         #loop around until ship fit in map
         while True:
             if map == COMPUTER_MAP:
-                orientation, row, column = random.choice("H", "V"), random.randint(0, 7), random.randint(0, 7)
+                orientation, row, column = random.choice(["H", "V"]), \
+                    random.randint(0, 7), random.randint(0, 7)
                 if ship_size_check(ship_size, row, column, orientation):
-                    #check for overlapping ships 
+                    #check for overlapping ship
                     if ship_overlap(map, row, column, orientation, ship_size) == False:
                         #placing ships
                         if orientation == "H":
@@ -58,7 +68,7 @@ def place_ship(map):
                 place_ship = True
                 print('Place the ship with a length of ' + str(ship_size))
                 row, column, orientation = user_input(place_ship)
-                if ship_size_check(SHIP_SIZE, row, column, orientation):
+                if ship_size_check(ship_size, row, column, orientation):
                     #Check for overlapping ships
                     if ship_overlap(map, row, column, orientation, ship_size) == False:
                           #Placing ships
@@ -72,6 +82,9 @@ def place_ship(map):
                         break
 
 def ship_size_check(SHIP_SIZE, row, column, orientation):
+    """
+    The hip_size_check checks if the ships inputted fit on the map
+    """
     if orientation == "H":
         if column + SHIP_SIZE > 8:
             return False
@@ -84,96 +97,144 @@ def ship_size_check(SHIP_SIZE, row, column, orientation):
             return True
 
 def ship_overlap(map, row, column, orientation, ship_size):
+    """
+    The ship_overlap function checks if inputted ships overlap any existing
+    ships already on the board
+    """
     if orientation == "H":
         for i in range(column, column + ship_size):
-            #check to see if ship is overlap
-            if map [row][i] == "∆":
+            if map[row][i] == "∆":
                 return True
     else:
         for i in range(row, row + ship_size):
-            if map [row][i] == "∆":
+            if map[i][column] == "∆":
                 return True
     return False
 
 
 def user_input(place_ship):
+    """
+    The user_input function takes input from the user when they want to place 
+    their ships as well as guessing the computers ships on the map
+    """
     if place_ship == True:
         while True:
-            try: #Askes for an input H or V
-                orientation = input("PLease enter orientation H or V :").upper()
+            try:
+                orientation = input("PLease enter orientation H or V : \n").upper()
                 if orientation == "H" or orientation == "V":
                     break
-            except TypeError:
-                print('Please enter a vaild orientation H or V')
-        while True:
-            try: #Askes for user to selection a Row 
-                row = input("Enter the row from 1-8 of the ship: ")
-                if row in '12345678':
-                    row = int(row) -1
-                    break
+                else:
+                    raise ValueError
             except ValueError:
-                print('Please enter a vaild number from 1-8')
+                print("Please enter a valid orientaion (H or V)")
+        while True:
+            try:
+                row = input("Enter the row of the ship 1-8: \n")
+                if row in '12345678':
+                    row = int(row) - 1
+                    break
+                else:
+                    raise ValueError
+            except ValueError:
+                print("Please enter a valid letter between 1-8")
         while True:
             try: #Askes for user to selection a Column
-                column = input("Please enter the column of ships :").upper()
-                if column in 'ABCDEFGH':
+                column = input("Enter the column of the ship A-H: \n").upper()
+                if column not in 'ABCDEFGH':
+                    print("Please enter a valid letter between A-H")
+                else:
                     column = LETTERS_TO_NUMBERS[column]
                     break
             except KeyError:
-                print('Please enter a vaild letter A-H')
+                print("Please enter a valid letter between A-H")
         return row, column, orientation
-    else: #If your making guesses
+    else:
         while True:
-            try: 
-                row = input("Enter the row from 1-8 of the ship: ")
+            try:
+                row = input("Enter the row of the ship 1-8: \n")
                 if row in '12345678':
-                    row = int(row) -1
+                    row = int(row) - 1
                     break
+                else:
+                    raise ValueError
             except ValueError:
-                print('Please enter a vaild number from 1-8')
+                print("Please enter a valid letter between 1-8")
         while True:
-            try: 
-                column = input("Please enter the column of ships :").upper()
-                if column in 'ABCDEFGH':
+            try:
+                column = input("Enter the column of the ship A-H: \n").upper()
+                if column not in 'ABCDEFGH':
+                    print("Please enter a valid letter between A-H")
+                else:
                     column = LETTERS_TO_NUMBERS[column]
                     break
             except KeyError:
-                print('Please enter a vaild letter A-H')
+                print("Please enter a valid letter between A-H")
         return row, column
 
 def hit_count(map):
-    count = 0 
+    """
+    The hit_count function counts the number of hits each board (Player,
+    Computer) has taken
+    """
+    count = 0
     for row in map:
         for column in row:
-            if column == "∆":
+            if column == "X":
                 count += 1
     return count
+
 # User/Computer turn on game (don't need orientation)
 def turn(map):
+    """
+    The turn function goes through the users and computers turns
+    """
     if map == PLAYER_GUESS_MAP:
         row, column = user_input(PLAYER_GUESS_MAP)
         if map[row][column] == "-":
             turn(map)
-        elif map[row][column] == "∆":
+        elif map[row][column] == "X":
             turn(map)
-        elif COMPUTER_GUESS_MAP[row][column] == "∆":
-            map[row][column] = "∆"
+        elif COMPUTER_MAP[row][column] == "∆":
+            map[row][column] = "X"
+            print("WE HIT THEM, GREAT SHOT")
         else:
             map[row][column] = "-"
+            print("WE MISSED")
     else:
         row, column = random.randint(0, 7), random.randint(0, 7)
         if map[row][column] == "-":
             turn(map)
-        elif map[row][column] == "∆":
+        elif map[row][column] == "X":
             turn(map)
         elif PLAYER_GUESS_MAP[row][column] == "∆":
-            map[row][column] = "∆"
+            map[row][column] = "X"
+            print("WE ARE HIT, FIRE BACK!")
+            print("COMPUTERS MAP \n")
         else:
-            map[row][column] = "-"
+            board[row][column] = "-"
+            print("THE COMPUTER MISSED,\n")
+            print("COMPUTERS MAP \n")
 
 place_ship(COMPUTER_MAP)
-print_map(COMPUTERMAP)
+print_map(COMPUTER_MAP)
 print_map(PLAYER_MAP)
 place_ship(PLAYER_MAP)
 
-#while True:
+while True:
+    #Players turn 
+    while True:
+        print('Guess a battleship location on the map')
+        print_map(PLAYER_GUESS_MAP)
+        turn(PLAYER_GUESS_MAP)
+        break
+    if hit_count(PLAYER_GUESS_MAP) == 17:
+        print("Congratulations You have sunk all the battleships, You win!!!")
+        break
+    #Computers turn
+    while True:
+        turn(COMPUTER_GUESS_MAP)
+        break
+    print_map(COMPUTER_GUESS_MAP)
+    if hit_count(COMPUTER_GUESS_MAP) == 17:
+        print("Sorry, The computer has sunk all your ships. You lose")
+        break
