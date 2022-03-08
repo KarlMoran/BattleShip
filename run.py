@@ -19,7 +19,7 @@ LETTERS_TO_NUMBERS = {
     'H': 7
     }
 
-SPACER = "\033[1;92m»\033[0m" * 90
+SPACER = "\033[1;92m»\033[0m" * 160
 
 # The SHIP_SIZE list contains the size of each ship on the map
 SHIP_SIZE = [2, 3, 3, 4, 5]
@@ -48,7 +48,7 @@ def welcome_message():
                          __/___
                   _____/______|
           _______/_____\_______\_____
-          \  BB-61           < < <   |
+          \  H05           < < <   |
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     
@@ -58,8 +58,8 @@ def welcome_message():
     time.sleep(3)
     # Welcome Message
     print("\nWelcome To Battleships Atlantic !\n")
-    print("THE MAP IS A GRID OF 8x8")
-    print("WITH FIVE SHIPS TO SINK\n")
+    print("THE MAP IS A GRID OF 8 x 8")
+    print("WITH FIVE SHIPS TO SINK/DESTORY\n")
     print("\033[1;93mDESTROYER - \033[1;97mGREYHOUND - \033[1;94mDICKY - \033[1;92mSUBMARINE - \033[1;91mESCORT\
     \u001b[0m\n")
     print("EACH PLAYER HAS 17 LIVES, \
