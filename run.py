@@ -19,7 +19,7 @@ LETTERS_TO_NUMBERS = {
     'H': 7
     }
 
-SPACER = "≠" * 50
+SPACER = "≠" * 90
 
 # The SHIP_SIZE list contains the size of each ship on the map
 SHIP_SIZE = [2, 3, 3, 4, 5]
@@ -29,7 +29,7 @@ def welcome_message():
     The welcome_message function displays a welcome message every new game
     """
     print("""\
-    \u001b[35m
+    \033[1;96m
   ____        _   _   _           _     _       
  |  _ \      | | | | | |         | |   (_)      
  | |_) | __ _| |_| |_| | ___  ___| |__  _ _ __  
@@ -38,13 +38,22 @@ def welcome_message():
  |____/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/ 
                                          | |    
                                          |_|    
+             _   _             _   _      
+        /\  | | | |           | | (_)     
+       /  \ | |_| | __ _ _ __ | |_ _  ___ 
+      / /\ \| __| |/ _` | '_ \| __| |/ __|
+     / ____ \ |_| | (_| | | | | |_| | (__ 
+    /_/    \_\__|_|\__,_|_| |_|\__|_|\___|
+
 \u001b[0m       
 """)
 
     # Welcome Message
     print("\nWelcome To Battleships Atlantic !\n")
-    print("THE MAP IS A GRID OF 8x8 WITH FIVE SHIPS TO SINK")
-    print("DESTROYER - GREYHOUND - DICKY - SUBMARINE - ESCORT")
+    print("THE MAP IS A GRID OF 8x8")
+    print("WITH FIVE SHIPS TO SINK\n")
+    print("\033[1;93mDESTROYER - \033[1;97mGREYHOUND - \033[1;94mDICKY - \033[1;92mSUBMARINE - \033[1;91mESCORT\
+    \u001b[0m\n")
     print("EACH PLAYER HAS 17 LIVES, \
 THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     time.sleep(5)
@@ -61,17 +70,17 @@ BOTH OF YOU CANT SEE WHERE TO")
     print("SHOOT... BUT THAT SHOULDNT BE MUCH OF A PROBLEM.")
     print("THE RULES ARE AS FOLLOWS: \n")
     print("SHIPS: \n")
-    print("ESCORT - SIZE OF 2 ON THE BOARD\n")
-    print("SUBMARINE - SIZE OF 3 ON THE BOARD\n")
-    print("DICKY - SIZE OF 3 ON THE BOARD\n")
-    print("GREYHOUND - SIZE OF 4 ON THE BOARD\n")
-    print("DESTROYER - SIZE OF 5 ON THE BOARD\n")
+    print("\033[1;91mESCORT - SIZE OF 2 ON THE MAP\u001b[0m\n")
+    print("\033[1;92mSUBMARINE - SIZE OF 3 ON THE MAP\u001b[0m\n")
+    print("\033[1;94mDICKY - SIZE OF 3 ON THE MAP\u001b[0m\n")
+    print("\033[1;97mGREYHOUND - SIZE OF 4 ON THE MAP\u001b[0m\n")
+    print("\033[1;93mDESTROYER - SIZE OF 5 ON THE MAP\u001b[0m\n")
    
     # Instructions - KEYS
     print("KEYS: \n")
-    print("∆ IS A SHIP")
-    print("- IS A MISS")
-    print("X IS A HIT/SUNK SHIP")
+    print("\033[1;97m ∆  IS A SHIP\u001b[0m")
+    print("\033[1;97m -  IS A MISS\u001b[0m")
+    print("\033[1;97m X  IS A HIT/SUNK SHIP\u001b[0m")
     time.sleep(5)
     print(SPACER)
 
@@ -265,7 +274,7 @@ def turn(map):
 welcome_message()
 # Computer places ships
 place_ship(COMPUTER_MAP)
-# Computer board displayed
+# Computer map displayed
 #print_map(COMPUTER_MAP)
 print_map(PLAYER_MAP)
 # Player places ships
