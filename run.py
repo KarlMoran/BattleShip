@@ -19,7 +19,7 @@ LETTERS_TO_NUMBERS = {
     'H': 7
     }
 
-SPACER = "≠" * 90
+SPACER = "\033[1;92m»\033[0m" * 90
 
 # The SHIP_SIZE list contains the size of each ship on the map
 SHIP_SIZE = [2, 3, 3, 4, 5]
@@ -29,7 +29,7 @@ def welcome_message():
     The welcome_message function displays a welcome message every new game
     """
     print("""\
-    \033[1;96m
+    \033[1;94m
   ____        _   _   _           _     _       
  |  _ \      | | | | | |         | |   (_)      
  | |_) | __ _| |_| |_| | ___  ___| |__  _ _ __  
@@ -45,9 +45,9 @@ def welcome_message():
      / ____ \ |_| | (_| | | | | |_| | (__ 
     /_/    \_\__|_|\__,_|_| |_|\__|_|\___|
 
-\u001b[0m       
+\033[0m      
 """)
-
+    time.sleep(3)
     # Welcome Message
     print("\nWelcome To Battleships Atlantic !\n")
     print("THE MAP IS A GRID OF 8x8")
@@ -56,7 +56,7 @@ def welcome_message():
     \u001b[0m\n")
     print("EACH PLAYER HAS 17 LIVES, \
 THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
-    time.sleep(5)
+    time.sleep(7)
     print(SPACER) 
 
     # Instructions
@@ -77,7 +77,7 @@ BOTH OF YOU CANT SEE WHERE TO")
     print("\033[1;93mDESTROYER - SIZE OF 5 ON THE MAP\u001b[0m\n")
    
     # Instructions - KEYS
-    print("KEYS: \n")
+    print("\033[1;97m KEYS:\u001b[0m\n")
     print("\033[1;97m ∆  IS A SHIP\u001b[0m")
     print("\033[1;97m -  IS A MISS\u001b[0m")
     print("\033[1;97m X  IS A HIT/SUNK SHIP\u001b[0m")
@@ -89,9 +89,9 @@ def print_map(map):
     The print_map function prints out the battleship map
     """
     # Header for the game 
-    print( "  A B C D E F G H")
+    print( "\033[1;97m  A B C D E F G H \033[0m ")
     # Spacer between header and map
-    print( "  •-•-•-•-•-•-•-•")
+    print( "  •-•-•-•-•-•-•-• ")
     row_number = 1
     for row in map:
         print("%d|%s|" % (row_number, "|".join(row)))
@@ -177,55 +177,55 @@ def user_input(place_ship):
     if place_ship == True:
         while True:
             try:
-                orientation = input("PLease enter orientation H or V : \n").upper()
+                orientation = input("PLease enter orientation \033[1;97mH or V :\u001b[0m \n").upper()
                 if orientation == "H" or orientation == "V":
                     break
                 else:
                     raise ValueError
             except ValueError:
-                print("Please enter a valid orientaion (H or V)")
+                print("Please enter a valid orientaion \033[1;97m(H or V)\u001b[0m")
         while True:
             try:
-                row = input("Enter the row of the ship 1-8: \n")
+                row = input("Enter the row of the ship \033[1;97m1-8:\u001b[0m \n")
                 if row in '12345678':
                     row = int(row) - 1
                     break
                 else:
                     raise ValueError
             except ValueError:
-                print("Please enter a valid letter between 1-8")
+                print("Please enter a valid letter between \033[1;97m1-8\u001b[0m")
         while True:
             try:
-                column = input("Enter the column of the ship A-H: \n").upper()
+                column = input("Enter the column of the ship \033[1;97mA-H:\u001b[0m \n").upper()
                 if column not in 'ABCDEFGH':
-                    print("Please enter a valid letter between A-H")
+                    print("Please enter a valid letter between \033[1;97mA-H\u001b[0m")
                 else:
                     column = LETTERS_TO_NUMBERS[column]
                     break
             except KeyError:
-                print("Please enter a valid letter between A-H")
+                print("Please enter a valid letter between \033[1;97mA-H\u001b[0m")
         return row, column, orientation
     else:
         while True:
             try:
-                row = input("Enter the row of the ship 1-8: \n")
+                row = input("Enter the row of the ship \033[1;97m1-8:\u001b[0m \n")
                 if row in '12345678':
                     row = int(row) - 1
                     break
                 else:
                     raise ValueError
             except ValueError:
-                print("Please enter a valid letter between 1-8")
+                print("Please enter a valid letter between \033[1;97m1-8\u001b[0m")
         while True:
             try:
-                column = input("Enter the column of the ship A-H: \n").upper()
+                column = input("Enter the column of the ship \033[1;97mA-H:\u001b[0m \n").upper()
                 if column not in 'ABCDEFGH':
-                    print("Please enter a valid letter between A-H")
+                    print("Please enter a valid letter between \033[1;97mA-H\u001b[0m")
                 else:
                     column = LETTERS_TO_NUMBERS[column]
                     break
             except KeyError:
-                print("Please enter a valid letter between A-H")
+                print("Please enter a valid letter between \033[1;97mA-H\u001b[0m")
         return row, column
 
 def hit_count(map):
