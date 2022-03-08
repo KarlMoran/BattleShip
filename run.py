@@ -48,7 +48,7 @@ def welcome_message():
                          __/___
                   _____/______|
           _______/_____\_______\_____
-          \  H05           < < <   |
+          \  H05            < < <    |
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     
@@ -68,7 +68,8 @@ THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     print(SPACER) 
 
     # Instructions
-    print("INSTRUCTIONS:\n")
+
+    print("\nINSTRUCTIONS:\n")
     print("THE FIRST PLAYER TO GET A HIT COUNT OF 17 HITS DESTROYING ALL ENEMY \
 SHIPS WINS")
     print("THE AIM OF THE GAME IS TO DESTROY THE AI \
