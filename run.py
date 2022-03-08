@@ -26,19 +26,23 @@ SHIP_SIZE = [2, 3, 3, 4, 5]
 
 def welcome_message():
     """
-    The welcome_message function displays a welcome message
+    The welcome_message function displays a welcome message every new game
     """
     print("""\
-  ___       _   _   _     ___ _    _      
- | _ ) __ _| |_| |_| |___/ __| |_ (_)_ __ 
- | _ \/ _` |  _|  _| / -_)__ \ ' \| | '_ \
- |___/\__,_|\__|\__|_\___|___/_||_|_| .__/
-                                    |_|      
-\
+    \u001b[35m
+  ____        _   _   _           _     _       
+ |  _ \      | | | | | |         | |   (_)      
+ | |_) | __ _| |_| |_| | ___  ___| |__  _ _ __  
+ |  _ < / _` | __| __| |/ _ \/ __| '_ \| | '_ \ 
+ | |_) | (_| | |_| |_| |  __/\__ \ | | | | |_) |
+ |____/ \__,_|\__|\__|_|\___||___/_| |_|_| .__/ 
+                                         | |    
+                                         |_|    
+\u001b[0m       
 """)
 
     # Welcome Message
-    print("\nWelcome To Battleships!\n")
+    print("\nWelcome To Battleships Atlantic !\n")
     print("THE MAP IS A GRID OF 8x8 WITH FIVE SHIPS TO SINK")
     print("DESTROYER - GREYHOUND - DICKY - SUBMARINE - ESCORT")
     print("EACH PLAYER HAS 17 LIVES, \
@@ -47,7 +51,7 @@ THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     print(SPACER) 
 
     # Instructions
-    print("\u001b[31mINSTRUCTIONS:\u001b[0m \n")
+    print("INSTRUCTIONS:\n")
     print("THE FIRST PLAYER TO GET A HIT COUNT OF 17 HITS DESTROYING ALL ENEMY \
 SHIPS WINS")
     print("THE AIM OF THE GAME IS TO DESTROY THE AI \
@@ -258,60 +262,28 @@ def turn(map):
             map[row][column] = "-"
             print("THE COMPUTER MISSED,\n")
             print("COMPUTERS MAP \n")
+welcome_message()
+# Computer places ships
+place_ship(COMPUTER_MAP)
+# Computer board displayed
+#print_map(COMPUTER_MAP)
+print_map(PLAYER_MAP)
+# Player places ships
+place_ship(PLAYER_MAP)
 
-def start_game():
-    """
-    Start game 
-    """
-    start_key = input("Press the letter P to start game: \n").upper()
-    while start_key !="P":
-        start_key = input("Press the letter P to start game: \n").upper()
-        print(SPACER)
-        # Computer places ships
-        place_ship(COMPUTER_MAP)
-        # Computer board displayed
-        print_map(COMPUTER_MAP)
-        print_map(PLAYER_MAP)
-        # Player places ships
-        place_ship(PLAYER_MAP)
-        
-        while True:
-            while True:
-                print('Guess a battleship location on the map')
-                print_map(PLAYER_GUESS_MAP)
-                turn(PLAYER_GUESS_MAP)
-                break
-            if hit_count(PLAYER_GUESS_MAP) == 17:
-                print("Congratulations You have sunk all the battleships, You win!!!")
-                break
-            while True:
-                turn(COMPUTER_GUESS_MAP)
-                break
-            print_map(COMPUTER_GUESS_MAP)
-            if hit_count(COMPUTER_GUESS_MAP) == 17:
-                print("Sorry, The computer has sunk all your ships. You lose")
-                break
-
-def play_again():
-    """
-    Asks the player if they want to play again or leave 
-    """
-    print("WOULD YOU LIKE TO PLAY AGAIN?, CAPTAIN \n")
-    answer = input("ENTER Y OR N: \n").upper()
-    print(' ')
+while True:
     while True:
-        if answer == "Y":
-            print(SPACER)
-            time.sleep(3)
-            welcome_message()
-        elif answer == "N":
-            print(' ')
-            print('GOODBYE!, SEE YOU SOON NEXT TIME')
-            print(' ')
-            print(SPACER)
-            return False
-            welcome_message()
-        else:
-            print(' ')
-            print('PLEASE ENTER Y OR N')
-            answer = input('ENTER Y OR N: \n').upper()
+        print('Guess a battleship location on the map')
+        print_map(PLAYER_GUESS_MAP)
+        turn(PLAYER_GUESS_MAP)
+        break
+    if hit_count(PLAYER_GUESS_MAP) == 17:
+        print("Congratulations You have sunk all the battleships, You win!!!")
+        break
+    while True:
+        turn(COMPUTER_GUESS_MAP)
+        break
+    print_map(COMPUTER_GUESS_MAP)
+    if hit_count(COMPUTER_GUESS_MAP) == 17:
+        print("Sorry, The computer has sunk all your ships. You lose")
+        break
