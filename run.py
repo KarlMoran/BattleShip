@@ -15,11 +15,11 @@ LETTERS_TO_NUMBERS = {
     'D': 3, 
     'E': 4, 
     'F': 5, 
-    'G': 6, 
+    'G': 6,
     'H': 7
     }
 
-PHASE = "≠" * 50
+SPACER = "≠" * 50
 
 # The SHIP_SIZE list contains the size of each ship on the map
 SHIP_SIZE = [2, 3, 3, 4, 5]
@@ -41,11 +41,11 @@ _|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|
     # Welcome Message
     print("\nWelcome To Battleships!\n")
     print("THE MAP IS A GRID OF 8x8 WITH FIVE SHIPS TO SINK")
-    print("CARRIER - GREYHOUND - CRUISER - SUBMARINE - DESTROYER")
+    print("DESTROYER - GREYHOUND - DICKY - SUBMARINE - ESCORT")
     print("EACH PLAYER HAS 17 LIVES, \
 THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     time.sleep(5)
-    print(PHASE) 
+    print(SPACER) 
 
     # Instructions
     print("\u001b[31mINSTRUCTIONS:\u001b[0m \n")
@@ -58,20 +58,23 @@ BOTH OF YOU CANT SEE WHERE TO")
     print("SHOOT... BUT THAT SHOULDNT BE MUCH OF A PROBLEM.")
     print("THE RULES ARE AS FOLLOWS: \n")
     print("SHIPS: \n")
-    print("DESTROYER - SIZE OF 2 ON THE BOARD\n")
+    print("ESCORT - SIZE OF 2 ON THE BOARD\n")
     print("SUBMARINE - SIZE OF 3 ON THE BOARD\n")
-    print("CRUISER - SIZE OF 3 ON THE BOARD\n")
+    print("DICKY - SIZE OF 3 ON THE BOARD\n")
     print("GREYHOUND - SIZE OF 4 ON THE BOARD\n")
-    print("CARRIER - SIZE OF 5 ON THE BOARD\n")
+    print("DESTROYER - SIZE OF 5 ON THE BOARD\n")
     # Instructions - Markers
     print("MARKERS: \n")
     print("∆ IS A SHIP")
     print("- IS A MISS")
     print("X IS A HIT/SUNK SHIP")
     time.sleep(5)
-    print(PHASE)
+    print(SPACER)
 
 def print_map(map):
+    """
+    The print_map function prints out the battleship map
+    """
     # Header for the game 
     print( "  A B C D E F G H")
     # Spacer between header and map
@@ -84,8 +87,8 @@ def print_map(map):
 def place_ship(map):
     """
     The place ship function loops throught the lengths of the ships and then
-    loops until the ship fits and dosent overlap any other ships on the map
-    and then places the ship.
+    loops until the ship fits and dosent overlap any ships on the map,
+    then places the ship.
     """
     #loop between length of ships
     for ship_size in SHIP_SIZE:
