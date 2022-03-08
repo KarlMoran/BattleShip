@@ -292,3 +292,32 @@ def start_game():
             if hit_count(COMPUTER_GUESS_MAP) == 17:
                 print("Sorry, The computer has sunk all your ships. You lose")
                 break
+
+def play_again():
+    """
+    Asks the player if they want to play again or leave 
+    """
+    print("WOULD YOU LIKE TO PLAY AGAIN?, CAPTAIN \n")
+    answer = input("ENTER Y OR N: \n").upper()
+    print(' ')
+    while True:
+        if answer == "Y":
+            print(SPACER)
+            time.sleep(3)
+            welcome_message()
+        elif answer == "N":
+            print(' ')
+            print('GOODBYE!, SEE YOU SOON NEXT TIME')
+            print(' ')
+            print(SPACER)
+            return False
+            welcome_message()
+        else:
+            print(' ')
+            print('PLEASE ENTER Y OR N')
+            answer = input('ENTER Y OR N: \n').upper()
+
+if __name__ == "__main__":
+    welcome_message()
+    start_game()
+    play_again()
