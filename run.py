@@ -29,12 +29,11 @@ def welcome_message():
     The welcome_message function displays a welcome message
     """
     print("""\
-   ___             _       _        _              ___    _         _      _ __  
-  | _ )   __ _    | |_    | |_     | |     ___    / __|  | |_      (_)    | '_ \ 
-  | _ \  / _` |   |  _|   |  _|    | |    / -_)   \__ \  | ' \     | |    | .__/ 
-  |___/  \__,_|   _\__|   _\__|   _|_|_   \___|   |___/  |_||_|   _|_|_   |_|__  
-_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""|_|"""""| 
-"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'"`-0-0-'      
+  ___       _   _   _     ___ _    _      
+ | _ ) __ _| |_| |_| |___/ __| |_ (_)_ __ 
+ | _ \/ _` |  _|  _| / -_)__ \ ' \| | '_ \
+ |___/\__,_|\__|\__|_\___|___/_||_|_| .__/
+                                    |_|      
 \
 """)
 
@@ -271,7 +270,7 @@ def start_game():
         # Computer places ships
         place_ship(COMPUTER_MAP)
         # Computer board displayed
-        #print_map(COMPUTER_MAP)
+        print_map(COMPUTER_MAP)
         print_map(PLAYER_MAP)
         # Player places ships
         place_ship(PLAYER_MAP)
@@ -316,8 +315,3 @@ def play_again():
             print(' ')
             print('PLEASE ENTER Y OR N')
             answer = input('ENTER Y OR N: \n').upper()
-
-if __name__ == "__main__":
-    welcome_message()
-    start_game()
-    play_again()
