@@ -50,7 +50,6 @@ def welcome_message():
           _______/_____\_______\_____
           \  H05            < < <    |
        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
     
 
 \033[0m      
@@ -66,6 +65,7 @@ def welcome_message():
 THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     time.sleep(7)
     print(SPACER) 
+    
 
     # Instructions
 

@@ -1,31 +1,20 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# BattleShip Atlanic 
 
-Welcome Karl Moran,
+BattleShip Atlanic  is a Python terminal mini game which runs on Heroku. It is based on the popular board game battleships more info on the game can be found below.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+As the game was developed in Python for use in the terminal, 
+it utilises the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
+#
+Users compete against the Computer to try and sink each others battleships, The first to destroy all battleships is the winner. 
 
-## Reminders
+There are 5 different type of ships to SINK,
+- **DESTROYER** (takes 5 spaces on the board)
+- **GREYHOUND** (takes 4 spaces on the board)
+- **DICKY** (takes 3 spaces on the board)
+- **SUBMARINE** (takes 3 spaces on the board) 
+- **ESCORT** (takes 2 spaces on the board).
+#
+The player gets to places their ***5 ships*** on the map & the computer randomly chooses where he wants to put all his ships, Then the game begins. 
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" target="_blank">Battleship Atlantic</a>
 
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
