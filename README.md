@@ -18,3 +18,7 @@ The player gets to places their ***5 ships*** on the map & the computer randomly
 
 Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" target="_blank">Battleship Atlantic</a>
 
+#
+
+<img width="442" alt="Battleship Atlantic" src="https://user-images.githubusercontent.com/92300013/157437496-4c74d947-7e99-42e4-b7f2-04f3a37cc192.png">
+

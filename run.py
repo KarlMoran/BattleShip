@@ -19,11 +19,13 @@ LETTERS_TO_NUMBERS = {
     'H': 7
     }
 
+# The SPACER divides the section
 SPACER = "\033[1;92m»\033[0m" * 160
 
 # The SHIP_SIZE list contains the size of each ship on the map
 SHIP_SIZE = [2, 3, 3, 4, 5]
 
+# the welcome graphics came from http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 def welcome_message():
     """
     The welcome_message function displays a welcome message every new game
@@ -93,6 +95,7 @@ BOTH OF YOU CANT SEE WHERE TO")
     time.sleep(5)
     print(SPACER)
 
+# Prints battleship map
 def print_map(map):
     """
     The print_map function prints out the battleship map
@@ -106,6 +109,7 @@ def print_map(map):
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
 
+# You get to place ships on the map
 def place_ship(map):
     """
     The place ship function loops throught the lengths of the ships and then
@@ -147,9 +151,10 @@ def place_ship(map):
                         print_map(PLAYER_MAP)
                         break
 
+#checks if the ships fit
 def ship_size_check(SHIP_SIZE, row, column, orientation):
     """
-    The hip_size_check checks if the ships inputted fit on the map
+    The ship_size_check checks if the ships inputted fit on the map
     """
     if orientation == "H":
         if column + SHIP_SIZE > 8:
@@ -162,6 +167,7 @@ def ship_size_check(SHIP_SIZE, row, column, orientation):
         else:
             return True
 
+# Do ships overlap
 def ship_overlap(map, row, column, orientation, ship_size):
     """
     The ship_overlap function checks if inputted ships overlap any existing
@@ -177,10 +183,10 @@ def ship_overlap(map, row, column, orientation, ship_size):
                 return True
     return False
 
-
+# User puts in input
 def user_input(place_ship):
     """
-    The user_input function takes input from the user when they want to place 
+    The user_input function takes input from the user when they want to place
     their ships as well as guessing the computers ships on the map
     """
     if place_ship == True:
@@ -237,6 +243,7 @@ def user_input(place_ship):
                 print("Please enter a valid letter between \033[1;97mA-H\u001b[0m")
         return row, column
 
+# Counts hit ships
 def hit_count(map):
     """
     The hit_count function counts the number of hits each map (Player,
