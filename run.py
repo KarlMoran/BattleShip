@@ -287,6 +287,7 @@ def turn(map):
             map[row][column] = "-"
             print("THE COMPUTER MISSED,\n")
             print("COMPUTERS MAP \n")
+            
 welcome_message()
 # Computer places ships
 place_ship(COMPUTER_MAP)
