@@ -58,12 +58,12 @@ def welcome_message():
 """)
     time.sleep(3)
     # Welcome Message
-    print("\nWelcome To Battleships Atlantic !\n")
-    print("THE MAP IS A GRID OF 8 x 8")
-    print("WITH FIVE SHIPS TO SINK/DESTORY\n")
-    print("\033[1;93mDESTROYER - \033[1;97mGREYHOUND - \033[1;94mDICKY - \033[1;92mSUBMARINE - \033[1;91mESCORT\
+    print("\n Welcome To Battleships Atlantic !\n")
+    print(" THE MAP IS A GRID OF 8 x 8")
+    print(" WITH FIVE SHIPS TO SINK/DESTORY\n")
+    print("\033[1;93m DESTROYER - \033[1;97m GREYHOUND - \033[1;94m DICKY - \033[1;92m SUBMARINE - \033[1;91m ESCORT\
     \u001b[0m\n")
-    print("EACH PLAYER HAS 17 LIVES, \
+    print(" EACH PLAYER HAS 17 LIVES, \
 THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     time.sleep(7)
     print(SPACER) 
@@ -72,20 +72,20 @@ THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     # Instructions
 
     print("\nINSTRUCTIONS:\n")
-    print("THE FIRST PLAYER TO GET A HIT COUNT OF 17 HITS DESTROYING ALL ENEMY \
+    print(" THE FIRST PLAYER TO GET A HIT COUNT OF 17 HITS DESTROYING ALL ENEMY \
 SHIPS WINS")
-    print("THE AIM OF THE GAME IS TO DESTROY THE AI \
+    print(" THE AIM OF THE GAME IS TO DESTROY THE AI \
 ENEMY BY DESTROYING ALL THEIR SHIPS")
-    print("BEFORE THEY DESTROY YOURS. THE THING IS WELL \
+    print(" BEFORE THEY DESTROY YOURS. THE THING IS WELL \
 BOTH OF YOU CANT SEE WHERE TO")
-    print("SHOOT... BUT THAT SHOULDNT BE MUCH OF A PROBLEM.")
-    print("THE RULES ARE AS FOLLOWS: \n")
-    print("SHIPS: \n")
-    print("\033[1;91mESCORT - SIZE OF 2 ON THE MAP\u001b[0m\n")
-    print("\033[1;92mSUBMARINE - SIZE OF 3 ON THE MAP\u001b[0m\n")
-    print("\033[1;94mDICKY - SIZE OF 3 ON THE MAP\u001b[0m\n")
-    print("\033[1;97mGREYHOUND - SIZE OF 4 ON THE MAP\u001b[0m\n")
-    print("\033[1;93mDESTROYER - SIZE OF 5 ON THE MAP\u001b[0m\n")
+    print(" SHOOT... BUT THAT SHOULDNT BE MUCH OF A PROBLEM.")
+    print(" THE RULES ARE AS FOLLOWS: \n")
+    print(" SHIPS: \n")
+    print("\033[1;91m ESCORT - SIZE OF 2 ON THE MAP\u001b[0m\n")
+    print("\033[1;92m SUBMARINE - SIZE OF 3 ON THE MAP\u001b[0m\n")
+    print("\033[1;94m DICKY - SIZE OF 3 ON THE MAP\u001b[0m\n")
+    print("\033[1;97m GREYHOUND - SIZE OF 4 ON THE MAP\u001b[0m\n")
+    print("\033[1;93m DESTROYER - SIZE OF 5 ON THE MAP\u001b[0m\n")
    
     # Instructions - KEYS
     print("\033[1;97m KEYS:\u001b[0m\n")
