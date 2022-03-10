@@ -51,3 +51,40 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 #
   
 <img width="317" alt="Start Game map" src="https://user-images.githubusercontent.com/92300013/157447022-2f1b44b3-819d-4928-b67e-d38357bf291e.png">
+
+# Validator Testing
+- HTMl - Not within project scope.
+
+- CSS - Not within project scope.
+
+- JS - Not within project scope.
+
+- Python - No errors were found when passing through the PEP8 Validator tool
+
+- Lighthouse - Not within project scope.
+
+# Deployment
+The site was deployed via Heroku, and the live link can be found here - <a href="https://battleships-atlantic.herokuapp.com/" target="_blank">Battleship Atlantic</a>
+
+## Project Deployment
+To deploy the project through Heroku I followed these steps:
+
+1. Sign up / Log in to Heroku
+2. From the main Heroku Dashboard page select 'New' and then 'Create New App'
+3. Give the project a name - I entered Battleships and select a suitable region, then select create app. The name for the app must be unique.
+4. This will create the app within Heroku and bring you to the deploy tab. From the submenu at the top, navigate to the settings tab.
+5. This next step is required for creating the app when using the CI Python Deployment Template. If you created your own program without using the CI Template, you might not need to add a config var.
+6. In the config vars section select the reveal config vars button. This will display the current config vars for the app, there should be nothing already there.
+7. In the KEY input field input PORT all in capitals, then in the VALUE field input 8000 and select the Add button to the right.
+8. Next select the add buildpack button below the config vars section.
+9. In the pop-up window select Python as your first build pack and select save changes.
+10. Then repeat the steps to add a node.js buildpack.
+11. The order of the buildpacks is important, in the list Python should be first with Node.js second. If they are not in this order, you can click and drag them to rearrange.
+12. Next navigate back to the deploy tab using the submenu at the top of the page.
+13. In the deployment method section select the GitHub - Connect to GitHub button and follow the steps prompted if any to connect your GitHub account
+14. In the Connect to GitHub section that appears, select the correct account, and enter the name of the repository and select search.
+15. Once Heroku has located the repo select connect.
+16. This will connect the repo to the app within Heroku. Below the Apps Connected to Heroku section will be the Automatic Deploys section.
+17. In this section, confirm the correct branch of the repo is selected in the drop-down box, and then click the Enable Automatic Deploys button
+18. This will ensure whenever you change something in the repo and push the changes to GitHub, Heroku will rebuild the app. If you prefer to do this manually you can utilise the manual deployment options further down. For this project I utilised the Automatic Deployment to enable me to check changes I made to the app as I developed it.
+19. Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.

@@ -58,7 +58,7 @@ def welcome_message():
 """)
     time.sleep(3)
     # Welcome Message
-    print("\n Welcome To Battleships Atlantic !\n")
+    print("\033[1;97m \nWelcome To Battleships Atlantic !\u001b[0m\n")
     print(" THE MAP IS A GRID OF 8 x 8")
     print(" WITH FIVE SHIPS TO SINK/DESTORY\n")
     print("\033[1;93m DESTROYER - \033[1;97m GREYHOUND - \033[1;94m DICKY - \033[1;92m SUBMARINE - \033[1;91m ESCORT\
@@ -80,7 +80,7 @@ ENEMY BY DESTROYING ALL THEIR SHIPS")
 BOTH OF YOU CANT SEE WHERE TO")
     print(" SHOOT... BUT THAT SHOULDNT BE MUCH OF A PROBLEM.")
     print(" THE RULES ARE AS FOLLOWS: \n")
-    print(" SHIPS: \n")
+    print("SHIPS: \n")
     print("\033[1;91m ESCORT - SIZE OF 2 ON THE MAP\u001b[0m\n")
     print("\033[1;92m SUBMARINE - SIZE OF 3 ON THE MAP\u001b[0m\n")
     print("\033[1;94m DICKY - SIZE OF 3 ON THE MAP\u001b[0m\n")
@@ -94,6 +94,7 @@ BOTH OF YOU CANT SEE WHERE TO")
     print("\033[1;97m X  IS A HIT/SUNK SHIP\u001b[0m")
     time.sleep(5)
     print(SPACER)
+
 
 # Prints battleship map
 def print_map(map):
