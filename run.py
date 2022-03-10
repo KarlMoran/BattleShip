@@ -66,12 +66,12 @@ def welcome_message():
     print(" EACH PLAYER HAS 17 LIVES, \
 THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     time.sleep(7)
-    print(SPACER) 
-    
+    print(SPACER)
+
 
     # Instructions
 
-    print("\nINSTRUCTIONS:\n")
+    print("\nINSTRUCTIONS:")
     print(" THE FIRST PLAYER TO GET A HIT COUNT OF 17 HITS DESTROYING ALL ENEMY \
 SHIPS WINS")
     print(" THE AIM OF THE GAME IS TO DESTROY THE AI \
@@ -142,7 +142,7 @@ def place_ship(map):
                 if ship_size_check(ship_size, row, column, orientation):
                     #Check for overlapping ships
                     if ship_overlap(map, row, column, orientation, ship_size) == False:
-                          #Placing ships
+                         #Placing ships
                         if orientation == "H":
                             for i in range(column, column + ship_size):
                                 map[row][i] = "∆"

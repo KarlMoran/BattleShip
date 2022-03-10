@@ -4,9 +4,9 @@ BattleShip Atlantic  is a Python terminal mini game which runs on Heroku. It is 
 
 As the game was developed in Python for use in the terminal, 
 it utilises the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
-#
-Users compete against the Computer to try and sink each others battleships, The first to destroy all battleships is the winner. 
 
+Users compete against the Computer to try and sink each others battleships, The first to destroy all battleships is the winner. 
+#
 There are 5 different type of ships to SINK,
 - **DESTROYER** (takes 5 spaces on the board)
 - **GREYHOUND** (takes 4 spaces on the board)
@@ -23,8 +23,6 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 <img width="442" alt="Battleship Atlantic" src="https://user-images.githubusercontent.com/92300013/157437496-4c74d947-7e99-42e4-b7f2-04f3a37cc192.png">
 
 #
-
-# Description
 
 ## How To Play 
 - The player places their 5 ships on the map.
@@ -49,8 +47,26 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 <img width="208" alt="Keys" src="https://user-images.githubusercontent.com/92300013/157444803-407e8a58-dcb5-4686-8e11-b33f4757219c.png">
 
 #
+* The Map
+  * Once instructions are shown, the player's map is created, which is displayed in the terminal. The user is prompted to place each ship in turn from smallest to largest (2-5), the ship size is displayed in terminal.
+  * Orientation, row and then column inputs are requested for the ship location, horizontal or vertical postioning followed by row and column input.All having validation checks on them. Overlap and fit checks are ran on the input location for the ship, which must be passed else the user is prompted for input again.
+  * Once  all of the inputs are entered and valid the ship is placed on the players map, their map is then printed to remember where placed ship for reference when placing the next. The computers ships are randomly placed on their board before the player places their ships are.
   
 <img width="317" alt="Start Game map" src="https://user-images.githubusercontent.com/92300013/157447022-2f1b44b3-819d-4928-b67e-d38357bf291e.png">
+
+<img width="307" alt="Place Ship size 2" src="https://user-images.githubusercontent.com/92300013/157657591-3436f35b-84c9-41f8-b93a-4a6619e42123.png">
+
+<img width="325" alt="place ship size 5" src="https://user-images.githubusercontent.com/92300013/157657717-72c1b8af-37b2-46b0-b23c-a82acda0366c.png">
+
+* The Guess Map
+  * Once the ships have been placed on each map the game play begins.
+  * The player always goes first, their guess map is printed out to them for reference.
+  * Once a valid input is entered the result of their attack is printed out. The computers guess is printed out to the user with the computers map of where the player hit for reference to see where there shot landed. Validation checks prevent the user repeating guessed spots on the map.
+ 
+ <img width="185" alt="guess miss" src="https://user-images.githubusercontent.com/92300013/157658651-92b974ac-0c82-4e79-9dbc-098c60a79c21.png">
+
+ <img width="347" alt="guess ship" src="https://user-images.githubusercontent.com/92300013/157658703-ba946e23-0667-4994-b989-8f0e4bd8b791.png">
+
 
 # Validator Testing
 - HTMl - Not within project scope.
