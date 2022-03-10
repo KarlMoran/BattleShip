@@ -11,7 +11,7 @@ COMPUTER_GUESS_MAP = [[" "] * 8 for i in range(8)]
 LETTERS_TO_NUMBERS = {
     'A': 0,
     'B': 1,
-    'C': 2, 
+    'C': 2,
     'D': 3, 
     'E': 4, 
     'F': 5, 
@@ -287,8 +287,7 @@ def turn(map):
         else:
             map[row][column] = "-"
             print("THE COMPUTER MISSED,\n")
-            print("COMPUTERS MAP \n")
-            
+            print("COMPUTERS MAP \n")                   
 welcome_message()
 # Computer places ships
 place_ship(COMPUTER_MAP)

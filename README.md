@@ -8,11 +8,11 @@ it utilises the Code Institute Python Template to generate a "terminal" onto the
 Users compete against the Computer to try and sink each others battleships, The first to destroy all battleships is the winner. 
 #
 There are 5 different type of ships to SINK,
-- **DESTROYER** (takes 5 spaces on the board)
-- **GREYHOUND** (takes 4 spaces on the board)
-- **DICKY** (takes 3 spaces on the board)
-- **SUBMARINE** (takes 3 spaces on the board) 
-- **ESCORT** (takes 2 spaces on the board).
+- **DESTROYER** (takes 5 spaces on the map)
+- **GREYHOUND** (takes 4 spaces on the map)
+- **DICKY** (takes 3 spaces on the map)
+- **SUBMARINE** (takes 3 spaces on the map) 
+- **ESCORT** (takes 2 spaces on the map).
 #
 The player gets to places their ***5 ships*** on the map & the computer randomly chooses where he wants to put all his ships, Then the game begins. 
 
@@ -26,7 +26,7 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 
 ## How To Play 
 - The player places their 5 ships on the map.
-- When all ships have been placed on the board the battle begins
+- When all ships have been placed on the map the battle begins
 - The player guesses the co-ordinates of the computers ships & the computer guesses where the player placed their ships.
 - The first to destroy all ships wins the game.
 
@@ -50,7 +50,7 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 * The Map
   * Once instructions are shown, the player's map is created, which is displayed in the terminal. The user is prompted to place each ship in turn from smallest to largest (2-5), the ship size is displayed in terminal.
   * Orientation, row and then column inputs are requested for the ship location, horizontal or vertical postioning followed by row and column input.All having validation checks on them. Overlap and fit checks are ran on the input location for the ship, which must be passed else the user is prompted for input again.
-  * Once  all of the inputs are entered and valid the ship is placed on the players map, their map is then printed to remember where placed ship for reference when placing the next. The computers ships are randomly placed on their board before the player places their ships are.
+  * Once  all of the inputs are entered and valid the ship is placed on the players map, their map is then printed to remember where placed ship for reference when placing the next. The computers ships are randomly placed on their map before the player places their ships are.
   
 <img width="317" alt="Start Game map" src="https://user-images.githubusercontent.com/92300013/157447022-2f1b44b3-819d-4928-b67e-d38357bf291e.png">
 
@@ -66,6 +66,16 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
  <img width="185" alt="guess miss" src="https://user-images.githubusercontent.com/92300013/157658651-92b974ac-0c82-4e79-9dbc-098c60a79c21.png">
 
  <img width="347" alt="guess ship" src="https://user-images.githubusercontent.com/92300013/157658703-ba946e23-0667-4994-b989-8f0e4bd8b791.png">
+
+ <img width="223" alt="Hit message" src="https://user-images.githubusercontent.com/92300013/157674858-a50f5123-c185-4d64-8021-491a0824fd11.png">
+
+* Ship Display "∆"
+  * Ships that haven't been hit are displayed on the player's board as the at sign "∆".
+  * Letters are used for the columns and numbers for the rows, this allows for easy differentiation when inputting coordinates. Just like in the battleship game. 
+  * The KEYS that have been used give a good level of contrast between the different KEYS.
+  "∆" to represent ships, 
+  "-" for a miss,
+  "X" for a hit.
 
 
 # Validator Testing
@@ -85,7 +95,7 @@ The site was deployed via Heroku, and the live link can be found here - <a href=
 ## Project Deployment
 To deploy the project through Heroku I followed these steps:
 
-1. Sign up / Log in to Heroku
+1. Sign up / Log in to <a href="https://id.heroku.com/login" target="_blank">Heroku</a>
 2. From the main Heroku Dashboard page select 'New' and then 'Create New App'
 3. Give the project a name - I entered Battleships and select a suitable region, then select create app. The name for the app must be unique.
 4. This will create the app within Heroku and bring you to the deploy tab. From the submenu at the top, navigate to the settings tab.
@@ -104,3 +114,11 @@ To deploy the project through Heroku I followed these steps:
 17. In this section, confirm the correct branch of the repo is selected in the drop-down box, and then click the Enable Automatic Deploys button
 18. This will ensure whenever you change something in the repo and push the changes to GitHub, Heroku will rebuild the app. If you prefer to do this manually you can utilise the manual deployment options further down. For this project I utilised the Automatic Deployment to enable me to check changes I made to the app as I developed it.
 19. Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
+
+# Bugs
+
+# Credits 
+
+When researching on how to use colour in the terminal I came across an article in <a href="https://stackoverflow.com/questions/5762491/how-to-print-color-in-console-using-system-out-println" target="_blank"> Stackoverflow </a> which showed me how to implement colours in the terminal and to reset them back. 
+
+Ascii art - The logo Battleship atlanic was design here <a href="http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20" target="_blank"> ASCII ART </a> and the Ship design came from <a href="https://www.asciiart.eu/vehicles/boats" target="_blank"> ASCII ART BOAT </a>
