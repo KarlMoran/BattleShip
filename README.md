@@ -8,9 +8,9 @@ it utilises the Code Institute Python Template to generate a "terminal" onto the
 Users compete against the Computer to try and sink each others battleships, The first to destroy all battleships is the winner. 
 #
 There are 5 different type of ships to SINK,
-- **DESTROYER** (takes 5 spaces on the map)
-- **GREYHOUND** (takes 4 spaces on the map)
-- **DICKY** (takes 3 spaces on the map)
+- **DESTROYER** (takes 6 spaces on the map)
+- **GREYHOUND** (takes 5 spaces on the map)
+- **DICKY** (takes 4 spaces on the map)
 - **SUBMARINE** (takes 3 spaces on the map) 
 - **ESCORT** (takes 2 spaces on the map).
 #
@@ -30,6 +30,8 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 - The player guesses the co-ordinates of the computers ships & the computer guesses where the player placed their ships.
 - The first to destroy all ships wins the game.
 
+<img width="730" alt="Instructions" src="https://user-images.githubusercontent.com/92300013/157858098-4e194d89-084d-4f68-9f9d-dedc5c4f6ebb.png">
+
 # Features 
 
 ## Existing features 
@@ -37,12 +39,12 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 * The welcome message 
   * The user is met with colour coded sections of ASCII art (Battleships Atlantic) with a ship. 
   * When the users starts the game, a welcome message is diplayed.
-  * A breif desciption of the game includes different types of ship, map size, total number of hits needed to win (17) and the key maker.
+  * A breif desciption of the game includes different types of ship, map size, total number of hits needed to win (20) and the key maker.
   * It also contains the instructions in how to play the game.
 
-<img width="731" alt="Welcome to" src="https://user-images.githubusercontent.com/92300013/157438257-6e5522c3-9ca4-4663-b9d6-823981edc0e2.png">
+<img width="729" alt="Welcome" src="https://user-images.githubusercontent.com/92300013/157857979-d5b9c00b-265b-4ad1-be8e-a272001bea9e.png">
 
-<img width="321" alt="Different Ships" src="https://user-images.githubusercontent.com/92300013/157444602-0aa63ab4-d804-4f67-b3e0-d3d50e61f532.png">
+<img width="340" alt="Different ships" src="https://user-images.githubusercontent.com/92300013/157858163-a91aa939-ef7e-4836-a63a-323954410974.png">
 
 <img width="208" alt="Keys" src="https://user-images.githubusercontent.com/92300013/157444803-407e8a58-dcb5-4686-8e11-b33f4757219c.png">
 
@@ -77,6 +79,13 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
   "-" for a miss,
   "X" for a hit.
 
+# Features left to implement
+There are no features left to implement from the initial scope of my project. I do have a few ideas on what i could do to improve the game. 
+
+A bigger map with more ships. Have different levels to play on - easy , medium , hard
+Make a play again button. 
+
+I would have a different layout for the maps, rather them side by side.
 
 # Validator Testing
 - HTMl - Not within project scope.
