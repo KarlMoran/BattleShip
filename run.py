@@ -23,7 +23,7 @@ LETTERS_TO_NUMBERS = {
 SPACER = "\033[1;92m»\033[0m" * 160
 
 # The SHIP_SIZE list contains the size of each ship on the map
-SHIP_SIZE = [2, 3, 3, 4, 5]
+SHIP_SIZE = [2, 3, 4, 5, 6]
 
 # the welcome graphics came from http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 def welcome_message():
@@ -83,9 +83,9 @@ BOTH OF YOU CANT SEE WHERE TO")
     print("SHIPS: \n")
     print("\033[1;91m ESCORT - SIZE OF 2 ON THE MAP\u001b[0m\n")
     print("\033[1;92m SUBMARINE - SIZE OF 3 ON THE MAP\u001b[0m\n")
-    print("\033[1;94m DICKY - SIZE OF 3 ON THE MAP\u001b[0m\n")
-    print("\033[1;97m GREYHOUND - SIZE OF 4 ON THE MAP\u001b[0m\n")
-    print("\033[1;93m DESTROYER - SIZE OF 5 ON THE MAP\u001b[0m\n")
+    print("\033[1;94m DICKY - SIZE OF 4 ON THE MAP\u001b[0m\n")
+    print("\033[1;97m GREYHOUND - SIZE OF 5 ON THE MAP\u001b[0m\n")
+    print("\033[1;93m DESTROYER - SIZE OF 6 ON THE MAP\u001b[0m\n")
    
     # Instructions - KEYS
     print("\033[1;97m KEYS:\u001b[0m\n")
@@ -292,7 +292,7 @@ welcome_message()
 # Computer places ships
 place_ship(COMPUTER_MAP)
 # Computer map displayed
-#print_map(COMPUTER_MAP)
+print_map(COMPUTER_MAP)
 print_map(PLAYER_MAP)
 # Player places ships
 place_ship(PLAYER_MAP)
@@ -303,13 +303,13 @@ while True:
         print_map(PLAYER_GUESS_MAP)
         turn(PLAYER_GUESS_MAP)
         break
-    if hit_count(PLAYER_GUESS_MAP) == 17:
+    if hit_count(PLAYER_GUESS_MAP) == 20:
         print("Congratulations You have sunk all the battleships, You win!!!")
         break
     while True:
         turn(COMPUTER_GUESS_MAP)
         break
     print_map(COMPUTER_GUESS_MAP)
-    if hit_count(COMPUTER_GUESS_MAP) == 17:
+    if hit_count(COMPUTER_GUESS_MAP) == 20:
         print("Sorry, The computer has sunk all your ships. You lose")
         break
