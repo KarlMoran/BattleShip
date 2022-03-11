@@ -63,8 +63,8 @@ def welcome_message():
     print(" WITH FIVE SHIPS TO SINK/DESTORY\n")
     print("\033[1;93m DESTROYER - \033[1;97m GREYHOUND - \033[1;94m DICKY - \033[1;92m SUBMARINE - \033[1;91m ESCORT\
     \u001b[0m\n")
-    print(" EACH PLAYER HAS 17 LIVES, \
-THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
+    print(" EACH PLAYER HAS 20 LIVES, \
+THE FIRST TO STRIKE 20 BLOWS TO THE ENEMYS SHIPS WINS\n")
     time.sleep(7)
     print(SPACER)
 
@@ -72,7 +72,7 @@ THE FIRST TO STRIKE 17 BLOWS TO THE ENEMYS SHIPS WINS\n")
     # Instructions
 
     print("\nINSTRUCTIONS:")
-    print(" THE FIRST PLAYER TO GET A HIT COUNT OF 17 HITS DESTROYING ALL ENEMY \
+    print(" THE FIRST PLAYER TO GET A HIT COUNT OF 20 HITS DESTROYING ALL ENEMY \
 SHIPS WINS")
     print(" THE AIM OF THE GAME IS TO DESTROY THE AI \
 ENEMY BY DESTROYING ALL THEIR SHIPS")
@@ -292,7 +292,7 @@ welcome_message()
 # Computer places ships
 place_ship(COMPUTER_MAP)
 # Computer map displayed
-print_map(COMPUTER_MAP)
+#print_map(COMPUTER_MAP)
 print_map(PLAYER_MAP)
 # Player places ships
 place_ship(PLAYER_MAP)
