@@ -98,8 +98,7 @@ I would like to have only one guess map for eveytime you guess. Instead of the t
 
 - JS - Not within project scope.
 
-- Python - No major errors were found when passing through the PEP8 Validator tool.
-trailing whitespace, 
+- Python - No major errors were found when passing through the <a href="http://pep8online.com/checkresult" target="_blank">PEP8</a> Validator tool
 
 - Lighthouse - Not within project scope.
 
