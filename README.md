@@ -1,8 +1,8 @@
 # BattleShip Atlantic 
 
-BattleShip Atlantic  is a Python terminal mini game which runs on Heroku. It is based on the popular board game battleships more info on the game can be found below.
+BattleShip Atlantic  is a Python terminal mini game which runs on Heroku. It is based on the popular board game battleships more info can be found below.
 
-As the game was developed in Python for use in the terminal, 
+As the game was developed in Python for the use in a terminal, 
 it utilises the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
 
 Users compete against the Computer to try and sink each others battleships, The first to destroy all battleships is the winner. 
@@ -14,7 +14,7 @@ There are 5 different type of ships to SINK,
 - **SUBMARINE** (takes 3 spaces on the map) 
 - **ESCORT** (takes 2 spaces on the map).
 #
-The player gets to places their ***5 ships*** on the map & the computer randomly chooses where he wants to put all his ships, Then the game begins. 
+The player gets to places their ***5 ships*** on the map & the ***computer randomly*** chooses where he wants to put all his ships, Then the game begins. 
 
 Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" target="_blank">Battleship Atlantic</a>
 
@@ -50,8 +50,8 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 
 #
 * The Map
-  * Once instructions are shown, the player's map is created, which is displayed in the terminal. The user is prompted to place each ship in turn from smallest to largest (2-5), the ship size is displayed in terminal.
-  * Orientation, row and then column inputs are requested for the ship location, horizontal or vertical postioning followed by row and column input.All having validation checks on them. Overlap and fit checks are ran on the input location for the ship, which must be passed else the user is prompted for input again.
+  * Once instructions are shown, the player's map is created, which is displayed in the terminal. The user is prompted to place each ship in turn from smallest to largest (2-6), the ship size is displayed in the terminal.
+  * Orientation, row followed by column inputs are requested for the ship location, horizontal or vertical postioning followed by row and column input.All having validation checks on them. Overlap and fit checks are ran on the input location for the ships.
   * Once  all of the inputs are entered and valid the ship is placed on the players map, their map is then printed to remember where placed ship for reference when placing the next. The computers ships are randomly placed on their map before the player places their ships are.
   
 <img width="317" alt="Start Game map" src="https://user-images.githubusercontent.com/92300013/157447022-2f1b44b3-819d-4928-b67e-d38357bf291e.png">
@@ -71,6 +71,8 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 
  <img width="223" alt="Hit message" src="https://user-images.githubusercontent.com/92300013/157674858-a50f5123-c185-4d64-8021-491a0824fd11.png">
 
+ <img width="569" alt="Win game message" src="https://user-images.githubusercontent.com/92300013/158187014-a2235b21-abc3-4890-b1c4-101584840701.png">
+
 * Ship Display "∆"
   * Ships that haven't been hit are displayed on the player's board as the at sign "∆".
   * Letters are used for the columns and numbers for the rows, this allows for easy differentiation when inputting coordinates. Just like in the battleship game. 
@@ -87,6 +89,8 @@ Make a play again button.
 
 I would have a different layout for the maps, rather them side by side.
 
+I would like to have only one guess map for eveytime you guess. Instead of the terminal printing a new one with your guess. Just use the same guess map. 
+
 # Validator Testing
 - HTMl - Not within project scope.
 
@@ -94,7 +98,8 @@ I would have a different layout for the maps, rather them side by side.
 
 - JS - Not within project scope.
 
-- Python - No errors were found when passing through the PEP8 Validator tool
+- Python - No major errors were found when passing through the PEP8 Validator tool.
+trailing whitespace, 
 
 - Lighthouse - Not within project scope.
 

@@ -287,12 +287,13 @@ def turn(map):
         else:
             map[row][column] = "-"
             print("THE COMPUTER MISSED,\n")
-            print("COMPUTERS MAP \n")                   
+            print("COMPUTERS MAP \n")     
+                      
 welcome_message()
 # Computer places ships
 place_ship(COMPUTER_MAP)
 # Computer map displayed
-#print_map(COMPUTER_MAP)
+# print_map(COMPUTER_MAP)
 print_map(PLAYER_MAP)
 # Player places ships
 place_ship(PLAYER_MAP)
