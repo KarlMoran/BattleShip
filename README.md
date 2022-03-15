@@ -71,6 +71,8 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 
  <img width="223" alt="Hit message" src="https://user-images.githubusercontent.com/92300013/157674858-a50f5123-c185-4d64-8021-491a0824fd11.png">
 
+ <img width="309" alt="Hit X Message" src="https://user-images.githubusercontent.com/92300013/158357717-d79c9329-13c4-4c94-b1b2-f4e1a87b5170.png">
+
  <img width="569" alt="Win game message" src="https://user-images.githubusercontent.com/92300013/158187014-a2235b21-abc3-4890-b1c4-101584840701.png">
 
 * Ship Display "∆"

@@ -25,7 +25,9 @@ SPACER = "\033[1;92m»\033[0m" * 160
 # The SHIP_SIZE list contains the size of each ship on the map
 SHIP_SIZE = [2, 3, 4, 5, 6]
 
-# the welcome graphics came from http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+# the welcome graphics from http://patorjk.com/
+
 def welcome_message():
     """
     The welcome_message function displays a welcome message every new game
@@ -69,7 +71,7 @@ THE FIRST TO STRIKE 20 BLOWS TO THE ENEMYS SHIPS WINS\n")
     print(SPACER)
 
 
-    # Instructions
+# Instructions
 
     print("\nINSTRUCTIONS:")
     print(" THE FIRST PLAYER TO GET A HIT COUNT OF 20 HITS DESTROYING ALL ENEMY \
@@ -102,13 +104,14 @@ def print_map(map):
     The print_map function prints out the battleship map
     """
     # Header for the game 
-    print( "\033[1;97m  A B C D E F G H \033[0m ")
+    print("\033[1;97m  A B C D E F G H \033[0m ")
     # Spacer between header and map
-    print( "  •-•-•-•-•-•-•-• ")
+    print("  •-•-•-•-•-•-•-• ")
     row_number = 1
     for row in map:
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
+
 
 # You get to place ships on the map
 def place_ship(map):
@@ -117,17 +120,17 @@ def place_ship(map):
     loops until the ship fits and dosent overlap any ships on the map,
     then places the ship.
     """
-    #loop between length of ships
+    # loop between length of ships
     for ship_size in SHIP_SIZE:
-        #loop around until ship fit in map
+        # loop around until ship fit in map
         while True:
             if map == COMPUTER_MAP:
                 orientation, row, column = random.choice(["H", "V"]), \
                     random.randint(0, 7), random.randint(0, 7)
                 if ship_size_check(ship_size, row, column, orientation):
-                    #check for overlapping ship
+                    # check for overlapping ship
                     if not ship_overlap(map, row, column, orientation, ship_size):
-                        #placing ships
+                        # placing ships
                         if orientation == "H":
                             for i in range(column, column + ship_size):
                                 map[row][i] = "∆"
@@ -140,9 +143,9 @@ def place_ship(map):
                 print('Place the ship with a length of ' + str(ship_size))
                 row, column, orientation = user_input(place_ship)
                 if ship_size_check(ship_size, row, column, orientation):
-                    #Check for overlapping ships
-                    if ship_overlap(map, row, column, orientation, ship_size) == False:
-                         #Placing ships
+                    # Check for overlapping ships
+                    if ship_overlap(map, row, column, orientation, ship_size) = False:
+                        # Placing ships
                         if orientation == "H":
                             for i in range(column, column + ship_size):
                                 map[row][i] = "∆"
@@ -152,7 +155,8 @@ def place_ship(map):
                         print_map(PLAYER_MAP)
                         break
 
-#checks if the ships fit
+
+# checks if the ships fit
 def ship_size_check(SHIP_SIZE, row, column, orientation):
     """
     The ship_size_check checks if the ships inputted fit on the map
@@ -167,6 +171,7 @@ def ship_size_check(SHIP_SIZE, row, column, orientation):
             return False
         else:
             return True
+
 
 # Do ships overlap
 def ship_overlap(map, row, column, orientation, ship_size):
@@ -183,6 +188,7 @@ def ship_overlap(map, row, column, orientation, ship_size):
             if map[i][column] == "∆":
                 return True
     return False
+
 
 # User puts in input
 def user_input(place_ship):
@@ -244,6 +250,7 @@ def user_input(place_ship):
                 print("Please enter a valid letter between \033[1;97mA-H\u001b[0m")
         return row, column
 
+
 # Counts hit ships
 def hit_count(map):
     """
@@ -256,6 +263,7 @@ def hit_count(map):
             if column == "X":
                 count += 1
     return count
+
 
 # User/Computer turn on game (don't need orientation)
 def turn(map):
@@ -287,8 +295,9 @@ def turn(map):
         else:
             map[row][column] = "-"
             print("THE COMPUTER MISSED,\n")
-            print("COMPUTERS MAP \n")     
-                      
+            print("COMPUTERS MAP \n") 
+                    
+
 welcome_message()
 # Computer places ships
 place_ship(COMPUTER_MAP)
