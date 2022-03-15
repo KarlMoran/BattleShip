@@ -1,3 +1,4 @@
+# Libraries
 import random
 import time
 
@@ -144,8 +145,8 @@ def place_ship(map):
                 row, column, orientation = user_input(place_ship)
                 if ship_size_check(ship_size, row, column, orientation):
                     # Check for overlapping ships
-                    if ship_overlap(map, row, column, orientation, ship_size) = False:
-                        # Placing ships
+                    if ship_overlap(map, row, column, orientation, ship_size) == False:
+                         # Placing ships
                         if orientation == "H":
                             for i in range(column, column + ship_size):
                                 map[row][i] = "∆"
