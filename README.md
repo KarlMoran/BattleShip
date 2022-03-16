@@ -131,6 +131,10 @@ To deploy the project through Heroku I followed these steps:
 19. Heroku will now build the app for you. Once it has completed the build process you will see a 'Your App Was Successfully Deployed' message and a link to the app to visit the live site.
 
 # Bugs
+## Solved 
+- I had a problem with the way my game would start. It didnt start in the right order until I went back to make changes to the order of the code. 
+
+- no Bugs remaining 
 
 # Credits 
 
