@@ -1,6 +1,6 @@
 # BattleShip Atlantic 
 
-BattleShip Atlantic  is a Python terminal mini game which runs on Heroku. It is based on the popular board game battleships more info can be found below.
+BattleShip Atlantic is a Python terminal mini game which runs on Heroku. It is based of the popular board game battleships - Battleship is a strategy type guessing game. It is played on ruled grids on which player's fleet of warships are marked. The locations of the fleets are concealed. 
 
 As the game was developed in Python for the use in a terminal, 
 it utilises the Code Institute Python Template to generate a "terminal" onto the page, making it available within a web browser.
@@ -37,7 +37,7 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 ## Existing features 
 
 * The welcome message 
-  * The user is met with colour coded sections of ASCII art (Battleships Atlantic) with a ship. 
+  * The user is met with a colour coded sections of ASCII art (Battleships Atlantic) with a ship. 
   * When the users starts the game, a welcome message is diplayed.
   * A breif desciption of the game includes different types of ship, map size, total number of hits needed to win (20) and the key maker.
   * It also contains the instructions in how to play the game.
@@ -50,8 +50,8 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 
 #
 * The Map
-  * Once instructions are shown, the player's map is created, which is displayed in the terminal. The user is prompted to place each ship in turn from smallest to largest (2-6), the ship size is displayed in the terminal.
-  * Orientation, row followed by column inputs are requested for the ship location, horizontal or vertical postioning followed by row and column input.All having validation checks on them. Overlap and fit checks are ran on the input location for the ships.
+  * Once instructions are shown, the player's map is created, which is displayed in the terminal. The user is prompted to place each ship in turn from smallest to largest (2-6), the ship size is shown in the terminal.
+  * Orientation, row followed by column inputs are requested for the ship location, Horizontal or Vertical postioning followed by row and column input.All having validation checks on them. Overlap and fit checks are ran on the input location for the ships.
   * Once  all of the inputs are entered and valid the ship is placed on the players map, their map is then printed to remember where placed ship for reference when placing the next. The computers ships are randomly placed on their map before the player places their ships are.
   
 <img width="317" alt="Start Game map" src="https://user-images.githubusercontent.com/92300013/157447022-2f1b44b3-819d-4928-b67e-d38357bf291e.png">
@@ -78,31 +78,31 @@ Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" tar
 * Ship Display "∆"
   * Ships that haven't been hit are displayed on the player's board as the at sign "∆".
   * Letters are used for the columns and numbers for the rows, this allows for easy differentiation when inputting coordinates. Just like in the battleship game. 
-  * The KEYS that have been used give a good level of contrast between the different KEYS.
+  * The KEYS that have been used give a good level of contrast.
   "∆" to represent ships, 
   "-" for a miss,
   "X" for a hit.
 
 # Features left to implement
-There are no features left to implement from the initial scope of my project. I do have a few ideas on what i could do to improve the game. 
+- There are no features left to implement from the initial scope of my project. I do have a few ideas on what I could do to improve the game. 
 
-A bigger map with more ships. Have different levels to play on - easy , medium , hard
+- A bigger map with more ships. Have different levels to play on - easy , medium , hard
 Make a play again button. 
 
-I would have a different layout for the maps, rather them side by side.
+- I would have a different layout for the maps, rather them side by side.
 
-I would like to have only one guess map for eveytime you guess. Instead of the terminal printing a new one with your guess. Just use the same guess map. 
+- I would like to have only one guess map for eveytime you guess. Instead of the terminal printing a new one with your guess. Just use the same guess map. 
 
 # Validator Testing
-- HTMl - Not within project scope.
+- HTMl - Not for this project scope.
 
-- CSS - Not within project scope.
+- CSS - Not for this project scope.
 
-- JS - Not within project scope.
+- JS - Not for this project scope.
 
 - Python - No major errors were found when passing through the <a href="http://pep8online.com/checkresult" target="_blank">PEP8</a> Validator tool
 
-- Lighthouse - Not within project scope.
+- Lighthouse - Not for this project scope.
 
 # Deployment
 The site was deployed via Heroku, and the live link can be found here - <a href="https://battleships-atlantic.herokuapp.com/" target="_blank">Battleship Atlantic</a>
