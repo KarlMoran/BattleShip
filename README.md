@@ -16,7 +16,7 @@ There are 5 different type of ships to SINK,
 #
 The player gets to places their ***5 ships*** on the map & the ***computer randomly*** chooses where he wants to put all his ships, Then the game begins. 
 
-Live link found here - <a href="https://battleships-atlantic.herokuapp.com/" target="_blank">Battleship Atlantic</a>
+Live link found here - <a href="https://battleship-atlantic.onrender.com/" target="_blank">Battleship Atlantic</a>
 
 #
 
